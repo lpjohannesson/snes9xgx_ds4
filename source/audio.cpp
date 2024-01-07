@@ -32,9 +32,9 @@ extern int ScreenshotRequested;
 extern int ConfigRequested;
 
 /*** Double buffered audio ***/
-#define SAMPLES_TO_PROCESS 4096
-#define AUDIOBUFFER 8192
-#define BUFFERCOUNT 32
+#define SAMPLES_TO_PROCESS 2048
+#define AUDIOBUFFER 4096
+#define BUFFERCOUNT 16
 static u8 soundbuffer[BUFFERCOUNT][AUDIOBUFFER] __attribute__ ((__aligned__ (32)));
 static int playab = 0;
 static int nextab = 0;
