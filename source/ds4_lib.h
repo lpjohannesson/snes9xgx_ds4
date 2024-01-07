@@ -8,9 +8,9 @@
 #include <wiiuse/wpad.h>
 
 typedef struct {
-    int exists;
+    u8 exists;
     float leftX, leftY, rightX, rightY;
-    u8 square, cross, circle, triangle, l1, r1, l2, r2, select, start;
+    u8 square, cross, circle, triangle, l1, r1, l2, r2, select, start, up, down, left, right;
 } ds4_state;
 
 ds4_state get_ds4_state();

@@ -24,6 +24,74 @@ s32 ds4_callback(s32 result, void *usrdata) {
     ds4_state_data.circle = button_fields1 & 0x40;
     ds4_state_data.triangle = button_fields1 & 0x80;
 
+    switch (button_fields1 & 0x0F) {
+        case 0:
+            ds4_state_data.up = 1;
+            ds4_state_data.down = 0;
+            ds4_state_data.left = 0;
+            ds4_state_data.right = 0;
+            break;
+
+        case 1:
+            ds4_state_data.up = 1;
+            ds4_state_data.down = 0;
+            ds4_state_data.left = 0;
+            ds4_state_data.right = 1;
+            break;
+
+        case 2:
+            ds4_state_data.up = 0;
+            ds4_state_data.down = 0;
+            ds4_state_data.left = 0;
+            ds4_state_data.right = 1;
+            break;
+        
+        case 3:
+            ds4_state_data.up = 0;
+            ds4_state_data.down = 1;
+            ds4_state_data.left = 0;
+            ds4_state_data.right = 1;
+            break;
+
+        case 4:
+            ds4_state_data.up = 0;
+            ds4_state_data.down = 1;
+            ds4_state_data.left = 0;
+            ds4_state_data.right = 0;
+            break;
+
+        case 5:
+            ds4_state_data.up = 0;
+            ds4_state_data.down = 1;
+            ds4_state_data.left = 1;
+            ds4_state_data.right = 0;
+            break;
+
+        case 6:
+            ds4_state_data.up = 0;
+            ds4_state_data.down = 0;
+            ds4_state_data.left = 1;
+            ds4_state_data.right = 0;
+            break;
+
+        case 7:
+            ds4_state_data.up = 1;
+            ds4_state_data.down = 0;
+            ds4_state_data.left = 1;
+            ds4_state_data.right = 0;
+            break;
+
+        case 8:
+            ds4_state_data.up = 0;
+            ds4_state_data.down = 0;
+            ds4_state_data.left = 0;
+            ds4_state_data.right = 0;
+            break;
+        
+        default:
+            break;
+    }
+
     int button_fields2 = ds4_data[6];
     ds4_state_data.l1 = button_fields2 & 0x01;
     ds4_state_data.r1 = button_fields2 & 0x02;

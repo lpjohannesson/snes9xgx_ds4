@@ -569,7 +569,7 @@ static void decodepad (int chan, int emuChan)
 
 		if (ds4_state.triangle)
 			jp |= PAD_BUTTON_X;
-			
+
 		if (ds4_state.start)
 			jp |= PAD_BUTTON_START;
 
@@ -579,16 +579,16 @@ static void decodepad (int chan, int emuChan)
 		if (ds4_state.r1)
 			jp |= PAD_TRIGGER_R;
 
-		if (ds4_state.leftY < -ds4_deadzone)
+		if (ds4_state.up || ds4_state.leftY < -ds4_deadzone)
 			jp |= PAD_BUTTON_UP;
 
-		if (ds4_state.leftY > ds4_deadzone)
+		if (ds4_state.down || ds4_state.leftY > ds4_deadzone)
 			jp |= PAD_BUTTON_DOWN;
 
-		if (ds4_state.leftX < -ds4_deadzone)
+		if (ds4_state.left || ds4_state.leftX < -ds4_deadzone)
 			jp |= PAD_BUTTON_LEFT;
 
-		if (ds4_state.leftX > ds4_deadzone)
+		if (ds4_state.right || ds4_state.leftX > ds4_deadzone)
 			jp |= PAD_BUTTON_RIGHT;
 	}
 
